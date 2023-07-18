@@ -1,0 +1,241 @@
+<!--
+    Estrutura básica do HTML
+    HTML é case insensitive, não importa maiusculo ou minusculo
+
+    Para não escrever toda essa parte inicial, utilizamos o ! para facilitar,
+    Recurso que ajuda do próprio VSCode.
+
+    Se quisermos utilizar um placeholder de texto para parágrafos por exemplo,
+    utilizamos o recurso do VSCode: lorem, que digita um texto grande em Latim
+    para facilitar a vida
+-->
+<!--
+    Tanto tags com ou sem corpo posso utilizar ID's para torna-las únicas
+    O que vai facilitar na estilização com CSS
+
+    O uso de classes também é comum para identificação, mas a diferença é que
+    as classes podem se repetir em diversas tags HTML, enquanto o ID é exclusivo
+
+    TAGS HTML:
+     TAGS INLINE: Podem ser utilizadas em parágrafos
+     TAGS NÃO INLINE: Não podem ser utilizadas em parágrafos pois utilizam o display block
+     tag excessão:
+        <meta> -> armazena metadados, como charset:
+            name="viewport" permite que dispositivos móveis conectem com seu site, ajustando as devidas proporções
+
+    TAGS SEM CORPO INLINE:
+        <br> -> quebra de linha
+
+        <h1> -> vai até o h6, representa um título(ou um texto muito pequeno(h6)):
+            São utilizados em ordem de tamanho e importancia
+            Sendo h1 um título, h2 um subtopico, h3 um subsubtópico e por aí vai
+        
+        <img> -> imagem:
+            Recebe os atributos 
+            src="o source da imagem, sendo um arquivo ou link"
+            alt="descreve a imagem para melhor acessibilidade"
+            width= tamanho
+            height= altura, mas esses ultimos dois posso passar em CSS
+        
+    TAGS SEM CORPO QUE NÃO SÃO INLINE:
+        <hr></hr> -> faz um traço horizontal que separa duas coisas:
+            similar ao divider do Notion
+
+
+    TAGS COM CORPO INLINE:
+        <head></head> -> 'cabeçalho', guarda metadados e títulos da página
+        <span></span> -> agrupa elementos (texto) a nível de linha (inline)
+        <p></p> -> parágrafo
+
+        <a></a> -> Utilizada para colocar Hyperlinks, passamos o atributo
+        href que recebe o link e um target, que será onde o navegador vai abrir
+        _self: abre na propria aba
+        _blank: abre em uma nova guia vazia
+
+        <i></i> -> itálico
+        <em></em> -> ênfase, deixa em itálico mas passa a semantica de ênfase
+
+        <b></b> -> bold, negrito
+        <strong></strong> -> deixa em negrito, mas passa a semantica(o siginificado)
+        de algo mais forte, na hora que um leitor digital for ler, ele vai lerá com
+        mais intensidade
+        
+        <s></s> -> risca a palavra
+        <del></del> -> risca a palavra, mas com aquele significado de, nossa errei,
+        na verdade era a outra (aí usamos <ins></ins>)
+        <ins></ins> -> utilizada junto com o del, risquei aquela e inseri essa nova
+        <u></u> -> underscore, deixa sublinhado, mas não possui o significado semantico
+        da ins
+        
+        <small></small> -> deixa o texto um pouquinho menor, as vezes para alguma enfase
+        <sup></sup> -> para exibir a exponenciação 2², subir um pouco a letra
+        <sub></sub> -> abaixa um pouco a letra
+
+        <q></q> -> quote, citação:
+            recebe o atributo cite, onde colocamos a fonte da citação, mas sem hyperlink
+
+        <code></code> -> code snippet, citar um trecho de código
+
+        <ul></ul> -> Unordered list, lista não ordenada:
+            Os elementos dessa lista são escritos pela tag <li></li>
+        <ol></ol> -> Ordered list, lista ordenada:
+            Os elementos dessa lista são escritos pela ttag <li></li>
+
+    TAGS COM CORPO SEM SER INLINE:
+        <div></div> agrupa elementos em nível não inline, ou seja, em blocos, 
+        não se bloqueando apenas ao limite da linha:
+            Facilitando o agrupamento de elementos, pois ja vem por padrão com
+            display: block;
+
+        <nav></nav> seção lógica da página que contém links de navegação
+
+        <blockquote></blockquote> -> faz uma citação em um display padrão de block:
+            Por ser uma citação, blockquote possui o atributo cite também
+    
+        <pre></pre> -> display block com texto ja pré formatado, mantendo os espaços etc
+
+
+-->
+
+
+<!-- 
+    Com o tema darcula
+    rosa: tag
+    verde: atributo
+    amarelo: valor do atributo
+-->
+<!--
+<algumacoisa>
+    <outracoisa>
+        <naotenhocorpo atributoDaTag="valor1 valor2">
+    </outracoisa>
+</algumacoisa>
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu HTML</title>
+    <!--
+        Dentro da tag style aplicamos o CSS
+        Posso utilizar style como atributo da tag, funcionando individualmente também
+
+        Basta selecionar a tag, abrir chaves e atribuir os estilizadores
+        Se fomos utilizar um id, utilizamos o # para specificar qual id
+        Se fomos uttilizar classe, utilizamos o . para specificar a classe
+
+        Em ordem de importancia
+        classe -> ID, o id é mais importante, ou seja, ele vai sobreescrever
+        a classe em algumas situações
+    -->
+    <style>
+        h1 { 
+            background-color: green;
+        }
+        p {
+            background-color: yellow;
+        }
+
+        #another-heading {
+            background-color:blue;   
+        }
+
+        #gandalf-imagem {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 30%;
+        }
+
+        .fundo-vermelho {
+            background-color: red;
+        }
+
+        .pink{
+            color: pink;
+        }
+
+        .carlos {
+            color: brown;
+        }
+
+        .code{
+            font-size: 16px;
+            background-color: black;
+            color: white;
+        }
+        
+        .verde-e-grande {
+            color: springgreen;
+            font-size: larger;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="heading" class="fundo-vermelho borde-esquerda"> 
+        Título! 
+    </h1>
+    <nav>
+        <ul>
+          <li><a href="#">Página inicial</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+
+    <h2 id="another-heading" class="fundo-vermelho">
+        Outro <b>Subtítulo</b>!
+    </h2>
+    <h3 style="background-color:  darkgreen;"> h3 </h3>
+    <h4> h4 </h4>
+    <h5> h5 </h5>
+    <h6> h6 </h6>
+    <p>
+        <strong>Lorem ipsum</strong> <i>dolor</i> sit amet consectetur adipisicing elit.
+        Magni, <em>earum et ullam</em>, nisi ducimus <del>a odio consectetur placeat</del> 
+        <ins>optio officia</ins> neque doloribus <b class="pink">voluptas</b> odit recusandae, 
+        natus voluptatum id ratione non.
+    </p>
+
+    <a href="https://www.youtube.com/watch?v=HGTJBPNC-Gw" target="_blank" style="background-color: darkorange;">
+        CLIQUE NESTE HYPERLINK FODASTICO <br>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=24rZwis4npw" target="_blank">
+    <img id="gandalf-imagem" src="https://img.ifunny.co/images/f2f747112bcf59578f850a21361db912486a21d512a00da463a880ee2cde339b_1.jpg" 
+    alt="descrição pra acessibilidade">
+    </a>
+    <p>
+        <u>Lorem</u> ipsum dolor sit amet <s>consectetur adipisicing elit.
+        Non at quisquam earum cupiditate</s>, eveniet minus <small>beatae sapiente</small>
+
+        <span class="verde-e-grande">rem, eaque perferendis corporis labore culpa quasi provident</span>
+
+        doloremque magni autem obcaecati veniam. <b>10</b><sup>2</sup> <b>H<sub>2</sub>O</b> <br>
+        <q cite="https://www.w3schools.com/howto/howto_css_image_center.asp">
+            Um grande sábio disse essa citação
+        </q>
+        <br>
+    </p>
+    <pre>
+        <code class="code">
+            if __name__ == '__main__': 
+                print("Hello World!")
+        </code>
+    </pre>
+
+    <span class="carlos">Carlos Vinícius</span><br>
+    <span>Carlos Vinícius</span><br>
+    <span>Carlos Vinícius</span><br>
+    <hr>
+    <blockquote cite="https://www.w3schools.com/howto/howto_css_image_center.asp">
+        Aqui sim estou fazendo um bloco de citação, perceba como ele está diferente
+    </blockquote>
+    <hr>
+    <div class="verde-e-grande">
+        Eu sou um bloco div super legal!
+    </div>
+</body>
+</html>
