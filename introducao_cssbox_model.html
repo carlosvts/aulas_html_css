@@ -1,3 +1,27 @@
+<!--
+    CSS BoxModel:
+    A forma que as caixas estão ligadas
+    De fora pra dentro:
+    margin -> border -> padding -> content
+    
+    Imagine como se uma estivesse dentro da outra
+    Todos em sua alinhação de width e coisas do tipo funcionam da seguinte ordem:
+    Topo Direita Baixo Esquerda - Top Right Bottom Left
+
+    width e height determina valores do elemento(content)
+
+    Quando adicionamos padding e border, o nosso elemento ele é 'enchido'
+    Fazendo com que seu width e seu height aumentem um pouco. Para resolver isso
+    , utilizamos:
+
+    box-sizing: border box; -> as bordas e os paddings serão usados no cálculo
+    para o width e height do elemento, assim as bordas e os paddings não vão
+    aumentar o tamanho do elemento. Ou seja, o width e o height são agora 
+    da "caixa toda", pois o padding interno, por exemplo, reduzirá o tamanho
+    do content, não vai expandi-lo mais
+    ! Muito útil, pois sempre sabemos o tamanho exato da box na tela
+
+-->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -6,16 +30,27 @@
     <title>Document</title>
 
     <style>
+        .section-one, .section-two {
+            box-sizing: border-box;
+        }
+
         .section-one{
             background: deeppink;
+            border: 5px solid black;
+            width: 200px;
+            padding: 15px;
+            
         }
         .section-two{
             background: cyan;
         }
-        
+
     </style>
 </head>
 <body>
-    
+    <section class="section-one">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, eos rem pariatur, quibusdam optio, ipsam animi dolores natus iusto atque temporibus sapiente minima! Ratione dicta aspernatur maiores unde iure commodi?
+    </section>
+    <section class="section-two">2</section>
 </body>
 </html>
