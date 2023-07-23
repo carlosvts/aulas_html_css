@@ -1,0 +1,19 @@
+.div1{
+    height: 180px; width: 120px; background: red
+}
+
+.inner_div {
+    height: 60px; width: 60px; background: yellow; float:left
+}
+
+.inner_div2 {
+    height: 60px; width: 60px; background: blue; float:left
+}
+
+.inner_div3 {
+    height: 60px; width: 60px; background: brown; float:left
+}
+
+.inner_div4 {
+    height: 60px; width: 120px; background: purple; float:left; text-align: center;
+}

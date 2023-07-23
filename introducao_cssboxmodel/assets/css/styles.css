@@ -1,0 +1,14 @@
+.section-one, .section-two {
+    box-sizing: border-box;
+}
+
+.section-one{
+    background: deeppink;
+    border: 5px solid black;
+    width: 200px;
+    padding: 15px;
+    
+}
+.section-two{
+    background: cyan;
+}

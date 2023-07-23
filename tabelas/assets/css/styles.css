@@ -1,0 +1,33 @@
+body {
+    font-family: sans-serif;
+}
+table {
+    border-collapse: collapse;
+    width: 800px;
+}
+table td, table th {
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: left;
+}
+table caption{
+    caption-side: bottom;
+    text-align: right;
+    font-style: italic;
+    font-size: 14px;
+    margin: 5px 0;
+}
+tfoot td, table th {
+    background: #ddd;
+}
+tfoot td {  
+    font-style: italic;
+}
+tbody #coluna-passada {
+    text-align: center;
+}
+
+.responsive-table {
+    max-width: 100%;
+    overflow-x: auto;
+}
