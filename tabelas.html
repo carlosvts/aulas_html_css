@@ -1,0 +1,88 @@
+<!--
+    Aprendendo como funcionam as tabelas em HTML
+    Utilizamos a tag table
+    Tabelas recebem cabeçalho, corpo e rodapé
+                    thead      tbody     trow
+    
+    tr -> table row - linha
+    th -> coluna da thead, da header, do cabeçalho
+    td -> coluna de body e rodape
+
+    tfoot geralmente é usado para total, exemplo uma tabela de preços, apesar
+    de não ser necessário usa-lo é bom para deixar o HTML mais semântico
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        table td, table th {
+            border: 1px solid #ccc;
+            padding: 5px;
+            text-align: left;
+        }
+        table caption{
+            caption-side: bottom;
+            text-align: right;
+            font-style: italic;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit</p>
+    <table>
+        <caption>Uma descrição para a tabela</caption>
+        <thead>
+            <tr>
+                <th>Título 1</th>
+                <th>Título 2</th>
+                <th>Título 3</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>Corpo 1</td>
+                <td>Corpo 2</td>
+                <td>Corpo 3</td>
+            </tr>
+
+            <tr>
+                <td>Corpo 1</td>
+                <td>Corpo 2</td>
+                <td>Corpo 3</td>
+            </tr>
+
+            <tr>
+                <td>Corpo 1</td>
+                <td>Corpo 2</td>
+                <td>Corpo 3</td>
+            </tr>
+
+        </tbody>
+    
+        <tfoot>
+            <tr>
+                <td>Corpo 1</td>
+                <td>Corpo 2</td>
+            </tr>
+        </tfoot>
+
+    </table>
+
+</body>
+</html>
