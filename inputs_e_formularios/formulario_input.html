@@ -68,7 +68,21 @@
         Inserir número
         posso passar min e max como atributo, para limitar o número
         e step para pular de x em x numeros
-    
+
+        ! type passwords
+        Oculta a informação digitada
+
+        ! type range
+        Mostra uma barrinha que vai de um número até outro
+        podemos colocar min max e step também
+        a tag datalist pode ser passada para tentar mostrar valores em cada 
+        parte do range, mas alguns navegadores não utilizam dela
+
+        ! type url
+        Caixa de texto para url
+
+        ! type search
+        input semantico para busca
 
     button -> botão
     atributos:
@@ -85,6 +99,26 @@
     </p>
     * passamos um id para o for para indicar que aquele label é para um input
     * especifico 
+
+    
+    Select -> selecionar uma das coisas, é quase um input
+     Para o select passamos id e name, dentro do select, as opções para selecionar
+     devem ser escritas utilizando as tags option, que recebem um value e, se uma
+     ja tiver que vir selecionada, passamos o selected
+
+    Podemos passar também: 
+        disabled - desabilita alguma opção
+        multiple - habilita muitas opções
+
+    * Se necessário, posso passar a tag optgroup para agrupar diversas opções
+    * Dentro do optgroup, devemos passar o atributo Label
+
+
+    Textarea -> Abre uma caixa para escrever texto, área de texto
+    Geralmente não colocamos nada dentro do textarea, mas se agnt colocar ele 
+    ja vem como value padrão
+    
+    Posso passar como atributo rows e cols (linhas e colunas)
 
 
 -->
@@ -175,6 +209,66 @@
                     <label for="numero"> Número entre 10 e 50 : </label>
                     <input type="number" id="numero" 
                     name="numero" min="10" max="50" step="5">
+                </p>
+
+                <p>
+                    <label for="senha">Senha: </label>
+                    <input type="password" id="senha" 
+                    name="senha" placeholder="Digite sua senha">
+                </p>
+
+                <p>
+                    <label for="range">Browser: </label>
+                    <input type="range" id="range" 
+                    name="range" min="10" max="50" list="browsers">
+
+                    <datalist id="browsers">
+                        <option value="Edge">
+                        <option value="Firefox">
+                        <option value="Chrome">
+                        <option value="Opera">
+                        <option value="Safari">
+                    </datalist>
+                </p>
+
+                <p>
+                    <label for="url">Insira um link: </label>
+                    <input type="url" id="url" 
+                    name="url" placeholder="URL">
+                </p>
+
+                <p>
+                    <label for="search">Search: </label>
+                    <input type="search" id="search" 
+                    name="search" placeholder="search">
+                </p>
+
+                <p>
+                    <label for="select">Selecione alguma opção (Select) </label>
+                    <select name="select" id="select">
+                        <optgroup label="Letras">
+                        <option value="a">A</option>
+                        <option value="b">B</option>
+                        <option value="c">C</option>
+                        </optgroup>
+                        <optgroup label="Números">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </optgroup>
+                        <optgroup label="XYZ">
+                            <option value="x">x</option>
+                            <option value="y">y</option>
+                            <option value="z">z</option>
+                        </optgroup>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="textarea">Área de texto: </label>
+                    <textarea name="textarea" 
+                    id="textarea-id" rows="3" cols="9">
+                    </textarea>
                 </p>
 
                 <p>
