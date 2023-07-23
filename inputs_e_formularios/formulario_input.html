@@ -1,18 +1,117 @@
+<!--
+    O HTML form é escrito pela tag <form>
+        Ele ja vem com display block
+
+    * podemos colocar qualquer coisa dentro do formulario, exceto outro form
+    
+    Doc: https://developer.mozilla.org/pt-BR/
+    docs/Learn/Forms/How_to_structure_a_web_form
+
+
+    Atributos do form:
+    action -> para onde vamos enviar o formulário
+    method -> métodos do formulário. Ex: Get, POST
+    target -> após enviar o formulario, abre outra guia etc, igual dos links
+    autocomplete -> mostrar respostas que vc fez anteriormente no formulário
+    * Existem outras, checar doc se necessário
+
+
+    Outras tags  que o acompanham
+    fieldset -> conjunto que agrupa o formulário
+    
+    input -> necessário passar um atributo que diz qual é o tipo do input
+        Muito importante utilizar ID para cada input    
+        Ex: input type="email"
+        Ele se comporta de maneiras diferentes dependendo do tipo passado
+        Atributos do input:
+        type -
+        name - utiliza-lo para que o backend possa fazer tudo certo
+       
+        placeholder - placeholder no input para informar melhor
+
+        value - Define valor padrão do input,  vai chegar junto com o name 
+        no servidor como um padrão de chave valor  {name:value}.
+        O valor que a pessoa digitar passa como value, então não é obrigatório
+
+        disabled - desabilita o input
+        readonly - deixa o input readonly
+        required- deixa o input required antes de enviar
+
+        ! type radio no input
+        Esse tipo é aquele estilo de formulário que você tem várias caixinhas,
+        mas só pode marcar uma. Para fazer isso funcionar teremos que passar o 
+        * o mesmo name para cada input, mas alteramos o value, o id e o for
+    
+    button -> botão
+    atributos:
+        type= tipo do botão, 'submit' botão que envia
+                             'reset' botão que reseta o formulário
+    
+
+
+    Label -> Legenda para o input ou outra coisa
+    Além da forma que está no código, podemos representar o label de outros jeitos:
+    <p>
+        <label for="nome-input"> Nome: </label>
+        <input type=text id="nome-input" name="nome" placeholder="Seu nome"
+    </p>
+    * passamos um id para o for para indicar que aquele label é para um input
+    * especifico 
+
+-->
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>formulário</title>
     <style>
         body {
             font-family: sans-serif;
+        }
+
+        label {
+            cursor: pointer;
+            display: block;
         }
 
     </style>
 
 </head>
 <body>
-    
+    <section>
+    <form action="#" method="get" target="_blank" autocomplete="off">
+            <h1>cabeçalho</h1>
+            <p>Responda esse formulário:</p>
+            <fieldset>
+                <label>
+                <legend>Qual o seu nome?</legend>
+                <p>
+                    <input type="text" id="nome-input" name="nome" 
+                    placeholder="Seu nome" value="valor padrão" required>
+                </p>
+                </label>
+                <p>
+                    <label for="dev"> Sou um dev? </label>
+                    <input type="checkbox" id="dev" value="sim">
+                </p>
+                <p>
+                    Gênero:
+                    <label for="feminino">feminino</label>
+                    <input type="radio" id="feminino" name="genero" value="feminino">
+                    <label for="masculino">masculino</label>
+                    <input type="radio" id="masculino" name="genero" value="masculino" checked>
+                    <label for="outro">outro</label>
+                    <input type="radio" id="outro" name="genero" value="outro">
+                </p>
+                <p>
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Resetar info</button>
+                </p>
+            </fieldset>
+    </form>
+    </section>
 </body>
 </html>
