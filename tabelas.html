@@ -10,6 +10,16 @@
 
     tfoot geralmente é usado para total, exemplo uma tabela de preços, apesar
     de não ser necessário usa-lo é bom para deixar o HTML mais semântico
+
+    Podemos passar como atributo:
+    colspan -> a célula vai passar de uma coluna, precisamos espicificar quantas
+    rowspan -> a célula vai passar de uma linha, precisamos especificar quantas
+
+    Quando temos tabelas muito grande e que serão necessárias scrolar
+    Passamos um seletor CSS overflow(quando ele passa da div, passa do limite)
+    Nesse exemplo passamos overflow no eixo X, assim podemos arrastar 
+    ! Somente a tabela, e não o site inteiro !
+
 -->
 
 <!DOCTYPE html>
@@ -25,7 +35,7 @@
         }
         table {
             border-collapse: collapse;
-            width: 100%;
+            width: 800px;
         }
         table td, table th {
             border: 1px solid #ccc;
@@ -39,10 +49,25 @@
             font-size: 14px;
             margin: 5px 0;
         }
+        tfoot td, table th {
+            background: #ddd;
+        }
+        tfoot td {  
+            font-style: italic;
+        }
+        tbody #coluna-passada {
+            text-align: center;
+        }
+
+        .responsive-table {
+            max-width: 100%;
+            overflow-x: auto;
+        }
     </style>
 </head>
 <body>
     <p>Lorem ipsum dolor sit</p>
+    <div class="responsive-table">
     <table>
         <caption>Uma descrição para a tabela</caption>
         <thead>
@@ -62,14 +87,11 @@
             </tr>
 
             <tr>
-                <td>Corpo 1</td>
-                <td>Corpo 2</td>
+                <td colspan="2" id="coluna-passada" rowspan="2">passei de coluna e linha</td>
                 <td>Corpo 3</td>
             </tr>
 
             <tr>
-                <td>Corpo 1</td>
-                <td>Corpo 2</td>
                 <td>Corpo 3</td>
             </tr>
 
@@ -77,12 +99,17 @@
     
         <tfoot>
             <tr>
-                <td>Corpo 1</td>
-                <td>Corpo 2</td>
+                <td colspan="2"></td>
+                <td>Total:</td>
+            </tr>
+            
+            <tr>
+                <td colspan="2"></td>
+                <td>R$550</td>
             </tr>
         </tfoot>
 
     </table>
-
+    </div>
 </body>
 </html>
