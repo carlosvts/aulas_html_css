@@ -1,21 +1,43 @@
 /*
     No CSS, a última mudança do elemento prevalecerá
-    
+    Cada comentário tem um exemplo de forma respectiva
+
     Seletores CSS:
 
-  o * -> seleciona todos os elementos da página, usamos para 'zerar' o CSS
+ 1. o * -> seleciona todos os elementos da página, usamos para 'zerar' o CSS
 
-  Posso selecionar pela tag, basta escrever a tag, ela aplicará em todas as tags
+
+ 2 e 3. Posso selecionar pela tag, basta escrever a tag, ela aplicará em todas as tags
   p {    h1 {    div {       etc...
    }        }        }
 
 
-  Posso fazer seleção por hierarquia
+ 4. Posso fazer seleção por hierarquia
 
-  Posso fazer uma seleção múltipla, adicionando vírgula, assim não preciso
+  5. Posso fazer uma seleção múltipla, adicionando vírgula, assim não preciso
   escrever o estilo duas vezes
 
-  Para estilizar uma classe, escrevemos assim:  .nomedaclasse
+ 6. Para estilizar uma classe, escrevemos assim:  .nomedaclasse {
+                                                                    }
+ 7 e 8.  Posso passar que quero apenas certa tag de certa classe
+
+ 9. Herança:
+   Mesmo aplicando somente na classe pai, a classe filha recebe o atributo
+   Mesmo esquema de herança, filho herda de pai, mas pai não herda de filho
+
+ 10. Se eu escrever um seletor assim: (deixando duas classes juntas)
+     .classe1.classe2 {
+                    }
+    Eu estou informando que o elemento precisa ter AS DUAS CLASSES, pode ter 
+    mais, mas precisa ter as duas
+
+ 11. Selecionando somente a filha, e não a filha da filha, usamos o seletor
+   (>) child selector, que vai selecionar o filho direto do elemento, ou seja
+   a tag que não possui tags intermediárias entre nosso elemento
+
+   .Pai > .Filha --> Seleciona todas as tags com classe filha que tem ligação
+   direta com o pai
+
 
 */
 * {
@@ -50,3 +72,40 @@ body div section p {
     color:purple;
     font-style: oblique;
 }
+
+.main-content h3,
+.main-content p.complementar-text {
+    color: yellow;
+}
+
+/* Ignore esse na contagem dos tópicos, este é apena para qualidade do site */
+.Pai .Filha {
+    color:violet
+}
+
+
+.Pai {
+    color:white;
+}
+
+.Pai.Filha {
+    color:deeppink;
+}
+
+
+.Pai > .Filha {
+    color: brown;
+}
+
+
+
+
+
+/*Ignore esse na contagem dos tópicos, este é apenas para qualidade do site*/
+/*Além disso, esse permite que a Filha da Filha não herde da Filha a cor deeppink */
+div {
+    margin-left: 20px;
+    color:initial
+}
+
+
