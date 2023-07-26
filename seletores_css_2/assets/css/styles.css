@@ -5,12 +5,28 @@
     2. (~) General Sibling Selector - Seleciona todos os elementos irmãos
     que vem depois de um elemento
 
+    * Estilização por atributo:
     3. Posso selecionar a tag que possui certo atributo, basta coloca-lo
     entre colchetes [] e fazer a estilização
+
     e também posso selecionar apenas as tags que tiverem o atributo com certo valor
     basta fazer, [atributo = "valor"] e fazer a estilização
 
+    além disso, posso utilizar o  ~ para afirmar que certo atributo deve conter
+    pelo menos aquele valor  [atributo ~= "valor1"]
 
+    outrossim, posso utilizar o | para indicar que certo atributo deeve começar
+    pelo nome informado e ser seguido de um traço
+    * não vou dar exemplo por não ser muito utilizado
+
+    então, posso utilizar o ^ para indicar que vou estilizar qualquer valor que começe
+    com o que eu escrevi
+    [atributo ^= "qualquercoisa"]
+    Ou seja, se o atributo possuir um valor que começa com "qualquercoisa"
+    ele será estilizado
+
+    outro, posso utilizar o * para indicar se o valor daquele atributo contém algo
+    [atributo *= "copio"]
 
     ! Lembrando que todos podem ser utilizados tanto com classe quanto com tags
     id até funcionaria mas é melhor manter os id's únicos na página
@@ -71,4 +87,19 @@ caso do checkbox apenas um exemplo */
 [checked] {
     width: 50px;
     height: 50px;
+}
+
+/* 3.3 Selecionando elementos que possuem no mínimo o atributo valor2 */
+[atributo-bacana ~= "valor2"] {
+    color: darkblue;
+}
+
+/* 3.4 Selecionando elementos que começam com o termo carro */
+[atributo-bacana ^= "carro"] {
+    color: brown;
+}
+
+/* 3.5 Selecionando elementos que possuem como valor algo que contenha copio*/
+[atributo-bacana *= "copio"] {
+    color: cornflowerblue;
 }
