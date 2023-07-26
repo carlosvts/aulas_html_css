@@ -1,0 +1,74 @@
+/*
+    Mais coisas relacionadas a herança
+    1. (+) Adjacent sibling selector - Seleciona o irmão adjacente
+
+    2. (~) General Sibling Selector - Seleciona todos os elementos irmãos
+    que vem depois de um elemento
+
+    3. Posso selecionar a tag que possui certo atributo, basta coloca-lo
+    entre colchetes [] e fazer a estilização
+    e também posso selecionar apenas as tags que tiverem o atributo com certo valor
+    basta fazer, [atributo = "valor"] e fazer a estilização
+
+
+
+    ! Lembrando que todos podem ser utilizados tanto com classe quanto com tags
+    id até funcionaria mas é melhor manter os id's únicos na página
+*/
+
+/* Apenas para visualizar melhor em modo escuro a página*/
+h1, p, h2, h3, div {
+    color:white;
+}
+body {
+    background: rgba(0, 0, 0, 1);
+    margin: 0;
+    padding: 0;
+}
+
+/* 1- Para um elemento da classe pai, encontre um p que venha imediatamente
+depois do h1 e deixe a cor dele verde. */
+
+.pai h1+p {
+    color: green;
+}
+/* 1.1 - Para um elemento da classe pai, encontre um h1 que venha imediatamente
+após o p e deixe a cor dele amarela. */
+.pai p+h1 {
+    color: yellow;
+}
+
+/* Seleciona o próximo elemento de classe tres que vem adjacente ao um*/
+
+.pai .um+.tres{
+    color:coral;
+}
+
+/* 2 Seleciona todos os p que vem depois do h2 */
+.pai h2~p {
+    color:blueviolet;
+}
+
+/* 2.1 Seleciona todos da classe 2 que vem depois da classe um */
+.pai .um~.dois {
+    color: aqua;
+}
+
+/* 3 Selecionando por atributo */
+[atributo-bacana] {
+    font-size: 30px;
+}
+
+/* 3.1 Selecionando por valor de certo atributo, fica bem específico */
+[atributo-bacana = "bacana"] {
+    font-size: 30px;
+    font-style: italic;
+
+}
+
+/* 3.2 Fazendo com atributos ja feitos do CSS (não será assim que será feito no 
+caso do checkbox apenas um exemplo */
+[checked] {
+    width: 50px;
+    height: 50px;
+}
