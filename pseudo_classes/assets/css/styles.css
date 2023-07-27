@@ -1,0 +1,76 @@
+/*
+    Pseudoclasses no CSS
+    começam com ':'
+
+    O css a seguir contem algum deles, mas todos estão na documentação
+    https://developer.mozilla.org/pt-BR/docs/Web/CSS/Pseudo-classes
+
+*/
+
+/*
+    Melhorando a qualidade do site para o estudo ficar mais confortável
+*/
+
+body {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+div, p, h1, h2, h3, li {
+    color: white;
+}
+
+input {
+    display: block;
+    margin: 10px;
+}
+
+/*
+    Aqui começa o código da aula
+*/
+.heading {
+    transition: all 500ms ease-in-out;
+}
+
+.heading:hover{
+    background: palegreen;
+}
+
+/* Utilizando a pseudoclasse link para modificar a cor de um elemento que eu ja
+visitei e um que eu nao visitei, diferenciando-os assim*/
+
+a:link {
+    color:deeppink /* Links não visitados */
+}
+
+a:visited {
+    color:firebrick /* Links visitados */
+}
+
+
+/* Quando clicamos e seguramos um objeto*/
+a:active {
+    background: darkgreen;
+}
+
+/* Quando o foco da página esta no input (ou seja, quando clicamos pra escrever) */
+input:focus{
+    background:palegoldenrod;
+    outline: none;
+    border: 1px solid white;
+}
+
+input:disabled {
+    background: rebeccapurple;
+    cursor: not-allowed;
+}
+
+/* Quando o input estiver checado, o p mais próximo será estilizado*/
+input:checked + p{
+
+    height: 40px;
+    color: violet;
+}
+
+.pai .lista li:last-child {
+    background:paleturquoise
+}
