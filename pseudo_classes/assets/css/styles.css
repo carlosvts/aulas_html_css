@@ -15,7 +15,7 @@ body {
     background-color: rgba(0, 0, 0, 1);
 }
 
-div, p, h1, h2, h3, li {
+div, p, h1, h2, h3, li, label {
     color: white;
 }
 
@@ -74,3 +74,9 @@ input:checked + p{
 .pai .lista li:last-child {
     background:paleturquoise
 }
+
+
+input:required {
+    background: red;
+}
+
